@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.soniadevs.myfirstcomposeapp.components.layout.MyBasicConstraintLayout
+import com.soniadevs.myfirstcomposeapp.components.layout.MyBasicConstraintLayoutChallenge
 import com.soniadevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyBasicConstraintLayout(
+                    MyBasicConstraintLayoutChallenge(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
