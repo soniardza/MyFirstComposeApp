@@ -8,19 +8,24 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.soniadevs.myfirstcomposeapp.R
 
 @Composable
 fun MyButtons(modifier: Modifier) {
     Column(modifier = modifier) {
         Button(
-            onClick = { Log.i("Aris", "Botón pulsado")},
+            onClick = { Log.i("Aris", "Botón pulsado") },
             enabled = true,
             shape = RoundedCornerShape(20),
             border = BorderStroke(3.dp, Color.Red),
@@ -50,11 +55,24 @@ fun MyButtons(modifier: Modifier) {
         ElevatedButton(
             onClick = {},
             elevation = ButtonDefaults.elevatedButtonElevation()
-            ) {
+        ) {
             Text("ElevatedButton")
         }
 
         FilledTonalButton(onClick = {}) { }
         Button(onClick = {}) { }
+    }
+}
+
+@Composable
+fun MyFAB(modifier: Modifier = Modifier) {
+    FloatingActionButton(
+        onClick = {},
+        shape = RoundedCornerShape(15),
+        contentColor = Color.White,
+        containerColor = Color.Red,
+        elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 12.dp)
+    ) {
+        Icon(painter = painterResource(R.drawable.ic_add), contentDescription = null)
     }
 }
