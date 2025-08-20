@@ -31,6 +31,7 @@ import com.soniadevs.myfirstcomposeapp.components.MyCustomDialog
 import com.soniadevs.myfirstcomposeapp.components.MyFAB
 import com.soniadevs.myfirstcomposeapp.components.MyModalDrawer
 import com.soniadevs.myfirstcomposeapp.components.MyTopAppBar
+import com.soniadevs.myfirstcomposeapp.components.advance.MyDerivedStateOfExample
 import com.soniadevs.myfirstcomposeapp.components.model.PokemonCombat
 import com.soniadevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 import kotlinx.coroutines.launch
@@ -89,6 +90,9 @@ class MainActivity : ComponentActivity() {
                                         }
                                     }
                                 })
+                            // MyInteractionSourceExample()
+                            // MyLaunchedEffect {}
+                            MyDerivedStateOfExample()
                         }
                     }
                 }
