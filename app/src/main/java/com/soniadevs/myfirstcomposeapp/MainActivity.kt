@@ -18,15 +18,20 @@ import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.soniadevs.myfirstcomposeapp.components.MyCustomDialog
 import com.soniadevs.myfirstcomposeapp.components.MyFAB
 import com.soniadevs.myfirstcomposeapp.components.MyModalDrawer
 import com.soniadevs.myfirstcomposeapp.components.MyTopAppBar
+import com.soniadevs.myfirstcomposeapp.components.model.PokemonCombat
 import com.soniadevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 import kotlinx.coroutines.launch
 
@@ -39,6 +44,15 @@ class MainActivity : ComponentActivity() {
                 val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
                 val snackBarHostState = remember { SnackbarHostState() }
                 val scope = rememberCoroutineScope()
+                var showDialog by remember { mutableStateOf(false) }
+                val pokemonCombat = PokemonCombat(pokemonA = "Pikachu", pokemonB = "Gengar")
+
+                MyCustomDialog(
+                    showDialog = showDialog,
+                    pokemonCombat = pokemonCombat,
+                    onStartCombat = { showDialog = false },
+                    onDismissDialog = { showDialog = false }
+                )
 
                 MyModalDrawer(drawerState) {
                     Scaffold(
@@ -49,7 +63,7 @@ class MainActivity : ComponentActivity() {
                             }
                         },
                         snackbarHost = { SnackbarHost(hostState = snackBarHostState) },
-                        floatingActionButton = { MyFAB() },
+                        floatingActionButton = { MyFAB { showDialog = true } },
                         floatingActionButtonPosition = FabPosition.Center,
                         bottomBar = { MyNavigationBar() }
                     ) { innerPadding ->
