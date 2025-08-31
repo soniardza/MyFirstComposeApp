@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -14,7 +13,6 @@ import androidx.compose.material3.FabPosition
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
@@ -29,9 +27,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.soniadevs.myfirstcomposeapp.components.MyCustomDialog
 import com.soniadevs.myfirstcomposeapp.components.MyFAB
+import com.soniadevs.myfirstcomposeapp.components.MyHorizontalGridList
 import com.soniadevs.myfirstcomposeapp.components.MyModalDrawer
 import com.soniadevs.myfirstcomposeapp.components.MyTopAppBar
-import com.soniadevs.myfirstcomposeapp.components.advance.MyDerivedStateOfExample
 import com.soniadevs.myfirstcomposeapp.components.model.PokemonCombat
 import com.soniadevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 import kotlinx.coroutines.launch
@@ -75,7 +73,7 @@ class MainActivity : ComponentActivity() {
                                 .background(Color.Cyan),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text("Esta es mi screen",
+                            /* Text("Esta es mi screen",
                                 modifier = Modifier.clickable {
                                     scope.launch {
                                         val result = snackBarHostState.showSnackbar(
@@ -89,10 +87,11 @@ class MainActivity : ComponentActivity() {
                                             // no hizo nada
                                         }
                                     }
-                                })
+                                }) */
                             // MyInteractionSourceExample()
                             // MyLaunchedEffect {}
-                            MyDerivedStateOfExample()
+                            // MyDerivedStateOfExample()
+                            MyHorizontalGridList()
                         }
                     }
                 }
