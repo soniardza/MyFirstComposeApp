@@ -31,6 +31,7 @@ import com.soniadevs.myfirstcomposeapp.components.MyHorizontalGridList
 import com.soniadevs.myfirstcomposeapp.components.MyModalDrawer
 import com.soniadevs.myfirstcomposeapp.components.MyTopAppBar
 import com.soniadevs.myfirstcomposeapp.components.model.PokemonCombat
+import com.soniadevs.myfirstcomposeapp.components.navigation.NavigationWrapper
 import com.soniadevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 import kotlinx.coroutines.launch
 
@@ -53,7 +54,8 @@ class MainActivity : ComponentActivity() {
                     onDismissDialog = { showDialog = false }
                 )
 
-                MyModalDrawer(drawerState) {
+                NavigationWrapper()
+                /* MyModalDrawer(drawerState) {
                     Scaffold(
                         modifier = Modifier.fillMaxSize(),
                         topBar = {
@@ -67,34 +69,34 @@ class MainActivity : ComponentActivity() {
                         bottomBar = { MyNavigationBar() }
                     ) { innerPadding ->
                         Box(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .padding(innerPadding)
-                                .background(Color.Cyan),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            /* Text("Esta es mi screen",
-                                modifier = Modifier.clickable {
-                                    scope.launch {
-                                        val result = snackBarHostState.showSnackbar(
-                                            message = "Ejemplo",
-                                            actionLabel = "Deshacer"
-                                        )
+                           modifier = Modifier
+                               .fillMaxSize()
+                               .padding(innerPadding)
+                               .background(Color.Cyan),
+                           contentAlignment = Alignment.Center
+                       ) {
+                            Text("Esta es mi screen",
+                               modifier = Modifier.clickable {
+                                   scope.launch {
+                                       val result = snackBarHostState.showSnackbar(
+                                           message = "Ejemplo",
+                                           actionLabel = "Deshacer"
+                                       )
 
-                                        if (result == SnackbarResult.ActionPerformed) {
-                                            // pulso deshacer
-                                        } else {
-                                            // no hizo nada
-                                        }
-                                    }
-                                }) */
+                                       if (result == SnackbarResult.ActionPerformed) {
+                                           // pulso deshacer
+                                       } else {
+                                           // no hizo nada
+                                       }
+                                   }
+                               })
                             // MyInteractionSourceExample()
                             // MyLaunchedEffect {}
                             // MyDerivedStateOfExample()
-                            MyHorizontalGridList()
+                            // MyHorizontalGridList()
                         }
                     }
-                }
+                } */
             }
         }
     }
