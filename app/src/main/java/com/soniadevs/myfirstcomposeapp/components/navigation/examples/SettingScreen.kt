@@ -14,19 +14,21 @@ import androidx.compose.ui.unit.sp
 import com.soniadevs.myfirstcomposeapp.components.navigation.examples.model.SettingModel
 
 @Composable
-fun DetailScreen(id: String, navigateToSettings: (SettingModel) -> Unit) {
-    var settingModel = SettingModel(id = "Soniaaa", darkMode = true)
+fun SettingScreen(settingModel: SettingModel) {
     Column(
         Modifier
             .fillMaxSize()
-            .background(Color(0xFFFFF176)),
+            .background(Color(0xFF81C784)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(Modifier.weight(1f))
-        Text("Detail: $id", fontSize = 30.sp)
+        Text(
+            text = "Setting: id: ${settingModel.id}, darkMode:${settingModel.darkMode}",
+            fontSize = 30.sp
+        )
         Spacer(Modifier.weight(1f))
-        Button(onClick = { navigateToSettings(settingModel) }) {
-            Text("Ajustes")
+        Button(onClick = {}) {
+            Text("Volver al inicio")
         }
         Spacer(Modifier.weight(1f))
     }
