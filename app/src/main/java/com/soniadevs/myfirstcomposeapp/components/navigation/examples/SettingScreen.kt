@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 import com.soniadevs.myfirstcomposeapp.components.navigation.examples.model.SettingModel
 
 @Composable
-fun SettingScreen(settingModel: SettingModel) {
+fun SettingScreen(settingModel: SettingModel, navigateToHome: () -> Unit) {
     Column(
         Modifier
             .fillMaxSize()
@@ -27,7 +27,7 @@ fun SettingScreen(settingModel: SettingModel) {
             fontSize = 30.sp
         )
         Spacer(Modifier.weight(1f))
-        Button(onClick = {}) {
+        Button(onClick = { navigateToHome() }) {
             Text("Volver al inicio")
         }
         Spacer(Modifier.weight(1f))
