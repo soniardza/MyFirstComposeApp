@@ -11,7 +11,7 @@ import com.soniadevs.myfirstcomposeapp.components.navigation.examples.HomeScreen
 import com.soniadevs.myfirstcomposeapp.components.navigation.examples.LoginScreen
 import com.soniadevs.myfirstcomposeapp.components.navigation.examples.SettingScreen
 import com.soniadevs.myfirstcomposeapp.components.navigation.examples.model.SettingModel
-import com.soniadevs.myfirstcomposeapp.components.navigation.types.settingModelType
+import com.soniadevs.myfirstcomposeapp.components.navigation.types.createNavType
 import kotlin.reflect.typeOf
 
 @Composable
@@ -32,7 +32,7 @@ fun NavigationWrapper(modifier: Modifier = Modifier) {
             DetailScreen(detail.id,
                 navigateToSettings = { navController.navigate(Settings(it)) })
         }
-        composable<Settings>(typeMap = mapOf(typeOf<SettingModel>() to settingModelType)) { navBackStackEntry ->
+        composable<Settings>(typeMap = mapOf(typeOf<SettingModel>() to createNavType<SettingModel>())) { navBackStackEntry ->
             val setting = navBackStackEntry.toRoute<Settings>()
             SettingScreen(setting.settingModel)
         }
