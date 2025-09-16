@@ -30,6 +30,12 @@ import com.soniadevs.myfirstcomposeapp.components.MyFAB
 import com.soniadevs.myfirstcomposeapp.components.MyHorizontalGridList
 import com.soniadevs.myfirstcomposeapp.components.MyModalDrawer
 import com.soniadevs.myfirstcomposeapp.components.MyTopAppBar
+import com.soniadevs.myfirstcomposeapp.components.animations.FullAnimateAsState
+import com.soniadevs.myfirstcomposeapp.components.animations.MyAnimatedContent
+import com.soniadevs.myfirstcomposeapp.components.animations.MyAnimatedVisibility
+import com.soniadevs.myfirstcomposeapp.components.animations.MyContentSize
+import com.soniadevs.myfirstcomposeapp.components.animations.MyCrossFade
+import com.soniadevs.myfirstcomposeapp.components.animations.MyInfiniteTransition
 import com.soniadevs.myfirstcomposeapp.components.model.PokemonCombat
 import com.soniadevs.myfirstcomposeapp.components.navigation.NavigationWrapper
 import com.soniadevs.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
@@ -54,7 +60,8 @@ class MainActivity : ComponentActivity() {
                     onDismissDialog = { showDialog = false }
                 )
 
-                NavigationWrapper()
+                MyInfiniteTransition()
+                // NavigationWrapper()
                 /* MyModalDrawer(drawerState) {
                     Scaffold(
                         modifier = Modifier.fillMaxSize(),
